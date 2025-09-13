@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Karla 💖</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        overflow: hidden;
+        color: #fff;
+        text-align: center;
+    }
+
+    .carta {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        max-width: 600px;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1.2em;
+        line-height: 1.5;
+    }
+
+    .heart {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: red;
+        transform: rotate(45deg);
+        animation: float 6s infinite linear;
+    }
+
+    .heart::before,
+    .heart::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: red;
+        border-radius: 50%;
+    }
+
+    .heart::before {
+        top: -10px;
+        left: 0;
+    }
+
+    .heart::after {
+        left: 10px;
+        top: 0;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(100vh) rotate(45deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-100vh) rotate(45deg);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="carta">
+    <h1>Para mi querida Karla 💖</h1>
+    <p>
+        Quiero que sepas que cada día que pasa me doy cuenta
+        de lo afortunado que soy de tenerte. Tu sonrisa ilumina
+        mis días y tu cariño me da fuerzas para todo. 
+        Gracias por existir y por ser tan maravillosa.
+        Eres sin duda alguna eso que yo tanto anhelaba... 
+        Y no estoy dispuesto a soltarte ni a dejarte ir.
+        Quiero una historia junto a ti...
+        ¿Tu no...?
+    </p>
+</div>
+
+<script>
+    // Generar corazones aleatorios
+    function crearCorazon() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * window.innerWidth + 'px';
+        heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+        heart.style.width = (10 + Math.random() * 20) + 'px';
+        heart.style.height = heart.style.width;
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+
+    setInterval(crearCorazon, 300);
+</script>
+
+</body>
+</html>
