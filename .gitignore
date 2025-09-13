@@ -1,0 +1,10 @@
+# mac / editor
+.DS_Store
+.vscode/
+
+# node / dependencias
+node_modules/
+
+# arch temporales
+*.log
+*.env
